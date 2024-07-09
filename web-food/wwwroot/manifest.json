@@ -1,0 +1,15 @@
+{
+    "name": "Hường Phở",
+    "short_name": "Hường Phở",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Hương vị Phở Việt",
+    "icons": [
+        {
+            "src": "/assets/img/common/icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

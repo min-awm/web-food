@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hường Phở - Đậm vị phở Việt</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/global.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <!-- Thêm PWA -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Thêm thư viện icon -->
+    <link rel="stylesheet" href="/assets/lib/font-awesome/all.min.css" />
+    <script src="/assets/lib/font-awesome/fontawesome.min.js"></script>
+
+    <!-- Thêm thư viện slider -->
+    <script src="/assets/lib/swiper/swiper.min.js"></script>
+
+    <!-- Thêm thư viện swal -->
+    <script src="/assets/lib/sweetalert2/sweetalert2.min.js"></script>
+</head>
+
+<body class="light-theme" id="app">
+    <header>
+        <div class="container header-wrrapper">
+            <a href="/">
+                <img src="/assets/img/common/logo.png" alt="Logo" class="header-left" />
+            </a>
+
+            <div class="header-right">
+                <i class="fa-solid fa-bars fa-xl sp-show icon" onclick="showNav(true)"></i>
+                <nav class="nav-mobile" id="nav-mobile">
+                    <i class="fa-solid fa-xmark fa-lg icon-close sp-show" onclick="showNav(false)"></i>
+                    <a href="#search" onclick="showNav(false)">Tìm kiếm</a>
+                    <a href="#best" onclick="showNav(false)">Bán chạy</a>
+                    <a href="#product" onclick="showNav(false)">Sản phẩm</a>
+                    <a href="#contact" onclick="showNav(false)">Liên hệ</a>
+                    <a href="/pages/history.html" id="order-link" style="display: none;" onclick="showNav(false)">Đơn hàng</a>
+                    <a id="login-btn" class="logout">Đăng nhập</a>
+                </nav>
+            </div>
+
+            <!-- <div class="" id="nav-mobile">
+               
+                <nav>
+                    <a href="#search" onclick="showNav(false)">Tìm kiếm</a>
+                    <a href="#best" onclick="showNav(false)">Bán chạy</a>
+                    <a href="#product" onclick="showNav(false)">Sản phẩm</a>
+                    <a href="#contact" onclick="showNav(false)">Liên hệ</a>
+                    <a href="/pages/history.html" id="order-link" style="display: none;" onclick="showNav(false)">Đơn
+                        hàng</a>
+                    <a id="login-btn" class="logout">Đăng nhập</a>
+                </nav>
+            </div> -->
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            <img src="/assets/img/home/home-banner.jpg" alt="Home Banner" class="pc-show" />
+            <img src="/assets/img/home/home-banner-mobile.jpg" alt="Home Banner Mobile" class="sp-show" />
+
+            <div class="banner-content" id="search">
+                <h1>
+                    Đặt món nào
+                    <br />
+                    <span class="hight-light">cũng freeship</span>
+                </h1>
+
+                <label class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-box-icon"></i>
+                    <input type="text" class="search-box-input"
+                        placeholder="Tìm quán ăn, trà sữa yêu thích để đặt Loship giao ngay" value=""
+                        oninput="searchProduct()" id="search-input" />
+                </label>
+            </div>
+        </section>
+
+        <section class="container product" id="search-product" style="display: none;">
+            <h3 class="title">Tìm kiếm</h3>
+            <div class="list-product" id="search-product-list">
+                <!-- <div class="item-product">
+                    <img src="/assets/img/product/product1.jpeg" alt="Product" />
+                    <p class="name">
+                        Burger Bò + Xúc Xích Đức - 1 Cái Burger Bò + Xúc Xích Đức - y1
+                        CáiBurger Bò + Xúc Xích Đức - 1 Cáiy
+                    </p>
+                    <p class="price">40.000 đ</p>
+                    <div class="btn-buy">Chọn mua</div>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="container">
+            <!-- 
+                loop: boolean - Cho phép vòng lặp
+                navigation: boolean - Hiện thị mũi tên điều hướng
+                space-between: number - Khoảng cách giữa các slide
+                autoplay-delay: number - Tự động chuyển slide
+                sliders-per-view: number - Số slide trên mỗi lượt xem
+                breakpoints: { - Dùng để responsive
+                   "768": {                   
+                        "slidesPerView": 2       
+                    },
+                }
+            -->
+            <swiper-container loop="true" navigation="true" space-between="30" autoplay-delay="5000" slides-per-view="1"
+                breakpoints='{                   
+                      "768": {                   
+                          "slidesPerView": 2       
+                      }, 
+                      "1024": {                    
+                          "slidesPerView": 3       
+                      }
+                  }' class="slider-wrapper">
+                <swiper-slide>
+                    <img src="/assets/img/home/slider-1.png" alt="SLIDE" />
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="/assets/img/home/slider-2.png" alt="SLIDE" />
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="/assets/img/home/slider-3.png" alt="SLIDE" />
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="/assets/img/home/slider-4.png" alt="SLIDE" />
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="/assets/img/home/slider-5.jpeg" alt="SLIDE" />
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="/assets/img/home/slider-6.jpeg" alt="SLIDE" />
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="/assets/img/home/slider-7.jpeg" alt="SLIDE" />
+                </swiper-slide>
+            </swiper-container>
+        </section>
+
+        <section class="container product" id="best">
+            <h3 class="title">Bán chạy</h3>
+            <div class="list-product" id="best-product">
+                <!-- <div class="item-product">
+                    <img src="/assets/img/product/product1.jpeg" alt="Product" />
+                    <p class="name">
+                        Burger Bò + Xúc Xích Đức - 1 Cái Burger Bò + Xúc Xích Đức - y1
+                        CáiBurger Bò + Xúc Xích Đức - 1 Cáiy
+                    </p>
+                    <p class="price">40.000 đ</p>
+                    <div class="btn-buy">Chọn mua</div>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="container product" id="product">
+            <h3 class="title">Sản phẩm</h3>
+            <div class="product-wrapper">
+                <aside class="menu-wrapper">
+                    <ul class="menu-list">
+                        <li onclick="changeMenu(this, 'pho')" class="menu-item active">Phở</li>
+                        <li onclick="changeMenu(this, 'comrang')" class="menu-item">Cơm rang</li>
+                        <li onclick="changeMenu(this, 'banh')" class="menu-item">Bánh</li>
+                        <li onclick="changeMenu(this, 'douong')" class="menu-item">Đồ uống</li>
+                        <li onclick="changeMenu(this, 'all')" class="menu-item">Tất cả</li>
+                    </ul>
+                </aside>
+                <div class="list-product product-five-col" id="product-list">
+                    <!-- <div class="item-product">
+                        <img src="/assets/img/product/product2.jpeg" alt="Product" />
+                        <p class="name">
+                            Burger Bò + Xúc Xích Đức - 1 Cái Burger Bò + Xúc Xích Đức - y1
+                            CáiBurger Bò + Xúc Xích Đức - 1 Cáiy
+                        </p>
+                        <p class="price">40.000 đ</p>
+                        <div class="btn-buy">Chọn mua</div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container company-info-wrapper">
+            <div class="company-info">
+                <a href="/">
+                    <img src="/assets/img/common/logo.png" alt="Logo" class="logo" />
+                </a>
+
+                <p>Hường Phở</p>
+                <b>Bến Thóc, Ngô Quyền, TP. Nam Định, Nam Định, Vietnam</b>
+                <p>
+                    Số điện thoại
+                    <a href="tel:01234567890"><b>012.3456.7890</b></a>
+                </p>
+                <a href="/pages/support.html">
+                    <p>Hỗ trợ</p>
+                </a>
+                <a href="/pages/policy.html">
+                    <p>Chính sách bảo mật</p>
+                </a>
+                <a href="/pages/quiz.html">
+                    <p>Trắc nghiệm có quà</p>
+                </a>
+                <a href="/pages/admin.html">
+                    <p>Truy cập Admin</p>
+                </a>
+                <p>
+                    Giao diện tối:
+                    <input class="theme-toggle" type='checkbox' onchange="setTheme(this)" id="theme-btn">
+                </p>
+            </div>
+            <div class="company-map">
+                <!-- Nếu offline -->
+                <!-- <img src="/assets/img/home/google-map.png" alt="Map" class="map"> -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64958.78955311445!2d106.12439550684645!3d20.414511450139823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135e772b1971613%3A0x9c2de2b452f6b917!2zUGjhu58geMawYSBOYW0gxJDhu4tuaA!5e0!3m2!1sen!2s!4v1718260944461!5m2!1sen!2s"
+                    style="border:0;" allowfullscreen="" loading="lazy" class="map"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-float-btn" onclick="showModalCart(true)">
+        <div class="cart-number" id="cart-number">0</div>
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+    <div class="modal" style="display: none;" id="modal-login">
+        <div class="modal-overlay" onclick="showModalLogin(false)"></div>
+        <div class="modal-content-wrraper">
+            <i class="fa-solid fa-xmark fa-xl modal-close-icon" onclick="showModalLogin(false)"></i>
+            <div class="modal-content">
+                <h3 class="modal-title">Đăng nhập</h3>
+                <label class="modal-input">
+                    <input type="text" name="login-name" id="login-name" placeholder="Tên">
+                </label>
+                <label class="modal-input">
+                    <input type="text" name="login-name" id="login-phone" placeholder="Số điện thoại">
+                </label>
+                <p class="modal-warning">
+                    Dữ liệu của bạn sẽ lưu trên thiết bị của bạn
+                </p>
+                <div class="modal-btn" onclick="saveLogin()">
+                    Lưu
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-cart" style="display: none;">
+        <div class="modal-overlay" onclick="showModalCart(false)"></div>
+        <div class="modal-content-wrraper">
+            <i class="fa-solid fa-xmark fa-xl modal-close-icon" onclick="showModalCart(false)"></i>
+            <div class="modal-content">
+                <h3 class="modal-title">Giỏ hàng</h3>
+                <span id="cart-item-list">
+                    <!-- <div class="cart-item">
+                        <img src="/assets/img/product/product1.jpeg" alt="Product">
+                        <p class="content">dsdddkd iiioqw wq wqwoqwo</p>
+                        <div class="number-input-up-down">
+                            <i class="fa-solid fa-minus icon"></i>
+                            <span>0</span>
+                            <i class="fa-solid fa-plus icon"></i>
+                        </div>
+                        <p class="price">40000dd</p>
+                    </div> -->
+                </span>
+
+
+                <div class="cart-last-price">
+                    <p>Tổng: (Freeship) </p>
+                    <p class="price" id="cart-last-price">0đ</p>
+                </div>
+
+                <div class="cart-btn-order" onclick="submitOrder()">
+                    Đặt hàng
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hường Phở - Đậm vị phở Việt</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/global.css" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <!-- Thêm PWA -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Thêm thư viện icon -->
+    <link rel="stylesheet" href="/assets/lib/font-awesome/all.min.css" />
+    <script src="/assets/lib/font-awesome/fontawesome.min.js"></script>
+
+    <!-- Thêm thư viện slider -->
+    <script src="/assets/lib/swiper/swiper.min.js"></script>
+
+    <!-- Thêm thư viện swal -->
+    <script src="/assets/lib/sweetalert2/sweetalert2.min.js"></script>
+</head>
+
+<body class="light-theme" id="app">
+    <header>
+        <div class="container header-wrrapper">
+            <a href="/">
+                <img src="/assets/img/common/logo.png" alt="Logo" class="header-left" />
+            </a>
+            <div class="header-right">
+                <i class="fa-solid fa-bars fa-xl sp-show icon"></i>
+                <nav class="pc-show">
+                    <a href="/">Trang chủ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="history quiz">
+            <h3>Trắc nghiệm có quà</h3>
+
+            <div class="quiz-btn" onclick="startQuiz(this)">
+                Bắt đầu
+            </div>
+
+            <div id="quiz-content" style="display: none;">
+                <div class="quiz-time" id="quiz-time">
+                    00:00
+                </div>
+
+                <div class="quiz-question-list">
+                    <div class="quiz-question-item">
+                        <h3>Câu 1: Món ăn truyền thống của Việt Nam?</h3>
+                        <label>
+                            <input type="radio" name="q0" onclick="selectedAns(0, 'a')">
+                            <span>A. Phở</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q0" onclick="selectedAns(0, 'b')">
+                            <span>B. Pad Thai</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q0" onclick="selectedAns(0, 'c')">
+                            <span>C. 四川麻婆豆腐</span>
+                        </label>
+                    </div>
+
+                    <div class="quiz-question-item">
+                        <h3>Câu 2: Đâu là loại bánh đặc sản có nguồn gốc từ Nam Định?</h3>
+                        <label>
+                            <input type="radio" name="q1" onclick="selectedAns(1, 'a')">
+                            <span>A. Bánh khô mè</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" onclick="selectedAns(1, 'b')">
+                            <span>B. Xíu páo</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q1" onclick="selectedAns(1, 'c')">
+                            <span>C. Bánh cáy</span>
+                        </label>
+                    </div>
+
+                    <div class="quiz-question-item">
+                        <h3>Câu 3: Đâu là tên 1 loại bánh của Việt Nam? </h3>
+                        <label>
+                            <input type="radio" name="q2" onclick="selectedAns(2, 'a')">
+                            <span>A. Bánh mì Việt Nam</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" onclick="selectedAns(2, 'b')">
+                            <span>B. Kuih</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q2" onclick="selectedAns(2, 'c')">
+                            <span>C. Bahulu</span>
+                        </label>
+                    </div>
+
+                    <div class="quiz-question-item">
+                        <h3>Câu 4: Bánh phở được làm từ nguyên liệu gì?</h3>
+                        <label>
+                            <input type="radio" name="q3" onclick="selectedAns(3, 'a')">
+                            <span>A. Gạo</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" onclick="selectedAns(3, 'b')">
+                            <span>B. Sầu riêng</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q3" onclick="selectedAns(3, 'c')">
+                            <span>C. Cà phê</span>
+                        </label>
+                    </div>
+
+                    <div class="quiz-question-item">
+                        <h3>Câu 5: Cây lương thực chính của Việt Nam?</h3>
+                        <label>
+                            <input type="radio" name="q4" onclick="selectedAns(4, 'a')">
+                            <span>A. Lúa</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" onclick="selectedAns(4, 'b')">
+                            <span>B. Vải</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="q4" onclick="selectedAns(4, 'c')">
+                            <span>C. Nhãn</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-btn" style="width: 110px;margin: 0 auto;margin-top: 50px;text-align: center;"
+                    onclick="showResult(this)">
+                    Kết thúc
+                </div>
+
+                <a href="" style="text-decoration: none;display: none;" id="btn-reset">
+                    <div class="quiz-btn" style="width: 150px;margin: 0 auto;margin-top: 50px;text-align: center;">
+                        Kiểm tra lại
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container company-info-wrapper">
+            <div class="company-info">
+                <a href="/">
+                    <img src="/assets/img/common/logo.png" alt="Logo" class="logo" />
+                </a>
+
+                <p>Hường Phở</p>
+                <b>Bến Thóc, Ngô Quyền, TP. Nam Định, Nam Định, Vietnam</b>
+                <p>
+                    Số điện thoại
+                    <a href="tel:01234567890"><b>012.3456.7890</b></a>
+                </p>
+                <a href="/pages/support.html">
+                    <p>Hỗ trợ</p>
+                </a>
+                <a href="/pages/policy.html">
+                    <p>Chính sách bảo mật</p>
+                </a>
+                <a href="/pages/quiz.html">
+                    <p>Trắc nghiệm có quà</p>
+                </a>
+                <a href="/pages/admin.html">
+                    <p>Truy cập Admin</p>
+                </a>
+                <p>
+                    Giao diện tối:
+                    <input class="theme-toggle" type='checkbox' onchange="setTheme(this)" id="theme-btn">
+                </p>
+            </div>
+            <div class="company-map">
+                <!-- Nếu offline -->
+                <!-- <img src="/assets/img/home/google-map.png" alt="Map" class="map"> -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64958.78955311445!2d106.12439550684645!3d20.414511450139823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135e772b1971613%3A0x9c2de2b452f6b917!2zUGjhu58geMawYSBOYW0gxJDhu4tuaA!5e0!3m2!1sen!2s!4v1718260944461!5m2!1sen!2s"
+                    style="border:0;" allowfullscreen="" loading="lazy" class="map"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/quiz.js"></script>
+</body>
+
+</html>

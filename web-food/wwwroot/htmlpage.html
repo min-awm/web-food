@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    fffs
+    <script>
+        async function createOrder() {
+
+        }
+        fetch('/api/admin/history-order', {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'
+  },
+            body: JSON.stringify({ username: "admin", password: 'admin' })
+}).then(res => res.json())
+  .then(res => console.log(res));
+    </script>
+
+</body>
+</html>

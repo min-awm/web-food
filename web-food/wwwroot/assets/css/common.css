@@ -1,0 +1,244 @@
+/* Start common.css */
+/* START HEADER */
+header {
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 60px;
+}
+
+.header-wrrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+}
+
+header .header-left {
+  width: 150px;
+}
+
+header .header-right a {
+  text-decoration: none;
+  padding: 0 5px;
+  color: var(--black);
+  cursor: pointer;
+}
+
+header .header-right .logout {
+  color: var(--red);
+}
+
+header .header-right a:hover {
+  color: var(--blue-700);
+}
+
+header .header-right .icon {
+  color: var(--black);
+}
+
+@media screen and (min-width: 768px) {
+  .nav-mobile {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .nav-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 60px 0 20px;
+  }
+
+  header .nav-mobile .icon-close {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+}
+/* END HEADER */
+
+/* START FOOTER */
+footer {
+  background-color: var(--white);
+}
+
+.company-info-wrapper {
+  padding: 40px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .company-info .logo {
+  width: 150px;
+}
+
+footer .company-info {
+  color: var(--black);
+}
+
+footer .company-info a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+footer .company-info a:hover {
+  color: var(--blue-700);
+}
+
+footer .company-map .map {
+  width: 600px;
+  height: 450px;
+}
+
+footer .theme-toggle {
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  height: 24px;
+  width: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid #ddd;
+  position: relative;
+  top: 5px;
+  padding: 2px 0;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  transition: background-color 0.5s;
+  margin: 0 0 0 10px;
+
+  &:before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-color: #007bff;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(0%);
+    transition: transform 0.5s;
+  }
+}
+
+.theme-toggle:checked {
+  background-color: #007bff;
+  border: none;
+
+  &:before {
+    background-color: #fff;
+    transform: translateY(-50%) translateX(26px);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .company-info-wrapper {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  footer .company-map .map {
+    width: 100%;
+    height: 300px;
+  }
+}
+/* END FOOTER */
+
+/* START MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black-200);
+}
+
+.modal-content-wrraper {
+  position: relative;
+  top: 20vh;
+  padding: 0 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.modal-close-icon {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  color: var(--black);
+}
+
+.modal-content {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 20px 15px;
+}
+
+.modal-title {
+  text-align: center;
+  margin: 0 0 20px;
+  font-size: 24px;
+  color: var(--black);
+}
+
+.modal-input {
+  display: flex;
+  padding: 10px 0;
+}
+
+.modal-input input {
+  border: 1px solid var(--gray-200);
+  background-color: var(--gray-100);
+  color: var(--black);
+  outline: none;
+  border-radius: 10px;
+  padding: 12px 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.modal-input input:focus {
+  border: 2px solid #007bff;
+}
+
+.modal-warning {
+  margin: 0;
+  color: var(--red);
+  font-size: 14px;
+}
+
+.modal-btn {
+  background-color: var(--blue-700);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+/* END MODAL */
+/* End common.css */
